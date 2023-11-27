@@ -9,6 +9,6 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - /c/Users/nicov/OneDrive/Escritorio/CURSOS/Python/DRF/Recipe API/recipe-app-api/app:/app
+      - ./app:/app
     command: >
       sh -c "python manage.py runserver 0.0.0.0:8000"
