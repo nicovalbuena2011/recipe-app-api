@@ -104,11 +104,11 @@ class PrivaterecipeAPITest(TestCase):
     def test_create_recipe(self):
         """Test creating a recipe"""
         payload = {
-            'title': 'sample recipe title',
-            'time_minutes': 22,
+            'title':'Thai prawn Curry',
+            'time_minutes': 30,
             'price': Decimal('5.50'),
-            'description': 'sample description',
-            'link': 'http://example.com/recipe.pdf'
+            # 'tags': [{'name': 'Indian'}, {'name': 'Breakfast'}],
+
         }
         res = self.client.post(RECIPES_URL, payload)
 
