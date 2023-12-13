@@ -60,11 +60,20 @@ class Recipe(models.Model):
     link = models.CharField('link', max_length = 50, blank = True)
     tags = models.ManyToManyField('tag')
 
+    ingredients = models.ManyToManyField('Ingredients')
+
     def __str__(self) -> str:
         return f'{self.title}'
     
 class Tag(models.Model):
     """Tag for filtering recipes"""
+    name = models.CharField('name', max_length=50)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.name}'
+    
+class Ingredients(models.Model):
     name = models.CharField('name', max_length=50)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
