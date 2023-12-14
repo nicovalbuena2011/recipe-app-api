@@ -12,7 +12,7 @@ from rest_framework import status
 from rest_framework.test import APIClient
 
 from core.models import (
-    Recipe, Tag
+    Recipe, Tag, Ingredients
 )
 
 from recipe.serializers import (

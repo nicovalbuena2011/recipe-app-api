@@ -74,8 +74,8 @@ class Tag(models.Model):
         return f'{self.name}'
     
 class Ingredients(models.Model):
-    name = models.CharField('name', max_length=50)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    name = models.CharField('name', max_length=50)
 
     def __str__(self):
         return f'{self.name}'
