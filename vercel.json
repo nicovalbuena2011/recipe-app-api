@@ -3,16 +3,11 @@
     "builds": [
       {
         "src": "Dockerfile",
-        "use": "@vercel/docker"
+        "use": "@now/docker"
       }
     ],
     "routes": [
-      { "handle": "filesystem" },
-      {
-        "src": "/(.*)",
-        "dest": "app.wsgi:application",
-        "methods": ["GET", "HEAD", "OPTIONS", "POST", "PUT", "DELETE"]
-      }
+      { "src": "/(.*)", "dest": "app.wsgi:application" }
     ]
   }
   
